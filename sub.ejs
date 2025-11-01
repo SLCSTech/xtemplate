@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="<%= data.DEFAULT_LANG ? 'fa' : 'en' %>" data-lang="<%= data.DEFAULT_LANG ? 'fa' : 'en' %>"
+<html lang="<%= data.DEFAULT_LANG ?  'en' %>" data-lang="<%= data.DEFAULT_LANG ?'en' %>"
     class="<%= data.enable ? 'rtl' : '' %>">
 
 <head>
@@ -146,7 +146,7 @@
         protocolMatch[1].toLowerCase() : null; if (protocol==='vmess' ) { try { const
         base64Data=link.split('://')[1].split('#')[0].split('?')[0]; const
         decodedData=JSON.parse(atob(decodeURI(base64Data))); return decodedData.ps || null; } catch (e) {
-        alert("خطا در پردازش vmess:", e); return null; } } else { const parts=link.split('#'); if (parts.length
+        alert("Error in vmess:", e); return null; } } else { const parts=link.split('#'); if (parts.length
         < 2) return null; let title=parts[1].split('?')[0]; try { title=decodeURIComponent(title); } catch (e) {
         alert(e); } title=title.replace(/[,\-–_]\s*(\d+D)?\s*(\d+H)?\s*(\d+M)?/gi, '' ).trim(); return title ||
         null; } } %>
@@ -323,7 +323,7 @@
         }
 
         function formatBytes(bytes, decimals = 2) {
-            if (bytes === 0) return '0 بایت';
+            if (bytes === 0) return '0 bytes';
             const k = 1024;
             const sizes = ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ztabytes', 'gigabytes'];
             const i = Math.floor(Math.log(Math.abs(bytes)) / Math.log(k));
