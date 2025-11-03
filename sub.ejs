@@ -16,7 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jalaali-js/dist/jalaali.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="shortcut icon" type="x-icon" href="https://chenuka.ggff.net/code.png">
+    <link rel="shortcut icon" type="x-icon" href="https://slcybervpn.store/img/favicon.jpg">
     <script>
         document.addEventListener("contextmenu", (event) => {
            event.preventDefault();
@@ -146,20 +146,14 @@
         protocolMatch[1].toLowerCase() : null; if (protocol==='vmess' ) { try { const
         base64Data=link.split('://')[1].split('#')[0].split('?')[0]; const
         decodedData=JSON.parse(atob(decodeURI(base64Data))); return decodedData.ps || null; } catch (e) {
-        alert("خطا در پردازش vmess:", e); return null; } } else { const parts=link.split('#'); if (parts.length
+        alert("vmess:", e); return null; } } else { const parts=link.split('#'); if (parts.length
         < 2) return null; let title=parts[1].split('?')[0]; try { title=decodeURIComponent(title); } catch (e) {
         alert(e); } title=title.replace(/[,\-–_]\s*(\d+D)?\s*(\d+H)?\s*(\d+M)?/gi, '' ).trim(); return title ||
         null; } } %>
 </head>
 
 <body class="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white p-4 md:p-8">
-    <button id="theme-toggle" onclick="toggleTheme()">
-        <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364 6.364l-1.414-1.414M6.05 6.05L4.636 4.636m12.728 0L18.364 4.636M6.05 17.95l-1.414 1.414M12 8a4 4 0 100 8 4 4 0 000-8z" />
-        </svg>
-    </button>
+    
 
     <div class="max-w-2xl mx-auto space-y-6">
         <!-- Subscription Info Section -->
@@ -174,8 +168,8 @@
                     </svg>
                 </div>
             </div>
-            <h1 class="text-3xl font-bold mt-4 mb-2">Usage Monitor by <a href="https://chenuka.ggff.net">Chenux</a></h1>
-            <p class="text-gray-400 text-lg">Usage Of : <%= data.email %>
+            <h1 class="text-3xl font-bold mt-4 mb-2">SL CYBER VPN TEAM</a></h1>
+            <p class="text-gray-400 text-lg">Usage Of <%= data.email %>
             
          
         
@@ -323,7 +317,7 @@
         }
 
         function formatBytes(bytes, decimals = 2) {
-            if (bytes === 0) return '0 بایت';
+            if (bytes === 0) return '0';
             const k = 1024;
             const sizes = ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ztabytes', 'gigabytes'];
             const i = Math.floor(Math.log(Math.abs(bytes)) / Math.log(k));
@@ -354,7 +348,7 @@
         const expireDateElement = document.getElementById('expireDate');
 
         if (expireValue === '0') {
-            expireDateElement.textContent = 'For a while';
+            expireDateElement.textContent = 'forever';
         } else {
             const expireDate = new Date(expireTimestamp);
             const gy = expireDate.getFullYear();
@@ -389,7 +383,7 @@
 
         const statusElement = document.getElementById('status');
         if (totalByte === 0) {
-            statusElement.textContent = 'Unlimited';
+            statusElement.textContent = 'Online';
         } else if (expireTimestamp >= Date.now() && usedBytes <= totalByte) {
             statusElement.textContent = 'Effective';
         } else {
